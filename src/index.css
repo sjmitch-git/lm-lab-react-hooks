@@ -5,8 +5,8 @@
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color:#242424;
-  background-color:  rgba(255, 255, 255, 0.87);
+  color: #242424;
+  background-color: rgba(255, 255, 255, 0.87);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,7 +14,10 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.hi { background: "pink"; width: "fit-content" }
+.hi {
+  background: "pink";
+  width: "fit-content";
+}
 
 hr {
   margin-top: 10px;
@@ -42,6 +45,7 @@ button {
   background-color: #646cff;
   cursor: pointer;
   transition: border-color 0.25s;
+  color: #fff;
 }
 button:hover {
   border-color: #646cff;
@@ -55,12 +59,10 @@ input[type="text"] {
   font-size: 1.2rem;
 }
 
-
-
 @media (prefers-color-scheme: dark) {
   :root {
     color: #e3eaf1;
-    background-color: #0C134F;
+    background-color: #0c134f;
   }
   button {
     background-color: #666ae0;
