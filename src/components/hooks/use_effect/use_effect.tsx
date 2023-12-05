@@ -14,8 +14,7 @@ export const APICall = () => {
       }
 
       const data = await response.json();
-      console.log(data);
-      setTodo(data.title); // Assuming the response has a 'title' property
+      setTodo(data.title);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
