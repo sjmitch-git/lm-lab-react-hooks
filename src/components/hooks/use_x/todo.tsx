@@ -9,8 +9,8 @@ interface TodoResponse {
 }
 
 export const Todo = () => {
-  const { data, loading, error } = useFetch<TodoResponse[]>(
-    "https://jsonplaceholder.typicode.com/posts"
+  const { data, loading, error } = useFetch<TodoResponse>(
+    "https://jsonplaceholder.typicode.com/posts/1"
   );
 
   if (loading) {
@@ -25,11 +25,7 @@ export const Todo = () => {
     <>
       <h2>Custom Hook</h2>
 
-      <ul>
-        {data?.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
-      </ul>
+      <p>{data?.title}</p>
     </>
   );
 };
