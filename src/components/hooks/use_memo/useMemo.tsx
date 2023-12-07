@@ -2,8 +2,18 @@ import { useState, useMemo } from "react";
 
 export const MemoExample = () => {
   console.log("Rendering component...");
-
+  const [input, setInput] = useState(0);
   const [numberObj, setNumberObj] = useState({ input: 0 });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Ensure that the value is a number
+    const inputValue = parseInt(e.target.value, 10);
+
+    // Check if the conversion to a number was successful
+    if (!isNaN(inputValue)) {
+      setInput(inputValue);
+    }
+  };
 
   // Use useMemo to memoize the result of the slowFunction
   const doubleNumber = useMemo(() => {
@@ -15,12 +25,12 @@ export const MemoExample = () => {
     <>
       <h2>useMemo Example</h2>
 
-      <button onClick={() => setNumberObj({ input: 3 })}>Double 3</button>
+      <input value={input} type="number" onChange={handleInputChange} />
 
-      <button onClick={() => setNumberObj({ input: 5 })}>Double 5</button>
+      <button onClick={() => setNumberObj({ input: input })}>Double {input}</button>
 
       <p className="use-memo__text">
-        Double of {numberObj.input}: {doubleNumber}
+        Double of {input}: {doubleNumber}
       </p>
     </>
   );
